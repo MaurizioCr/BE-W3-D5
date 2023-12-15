@@ -1,17 +1,18 @@
-package Entities;
+package mauriziocrispino.Entities;
 
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
-@Table(name = "animals")
+@Table(name = "Catalogo")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class  Catalogo {
     @Id
     @GeneratedValue
     protected long ISBN;
     String Title;
-    String annoDiPubblicazione;
+    Date annoDiPubblicazione;
     int numeroPagine;
 
     public String getTitle() {
@@ -22,11 +23,11 @@ public abstract class  Catalogo {
         Title = title;
     }
 
-    public String getAnnoDiPubblicazione() {
+    public Date getAnnoDiPubblicazione() {
         return annoDiPubblicazione;
     }
 
-    public void setAnnoDiPubblicazione(String annoDiPubblicazione) {
+    public void setAnnoDiPubblicazione(Date annoDiPubblicazione) {
         this.annoDiPubblicazione = annoDiPubblicazione;
     }
 
@@ -38,7 +39,7 @@ public abstract class  Catalogo {
         this.numeroPagine = numeroPagine;
     }
 
-    public Catalogo(String title, String annoDiPubblicazione, int numeroPagine) {
+    public Catalogo(String title, Date annoDiPubblicazione, int numeroPagine) {
         Title = title;
         this.annoDiPubblicazione = annoDiPubblicazione;
         this.numeroPagine = numeroPagine;

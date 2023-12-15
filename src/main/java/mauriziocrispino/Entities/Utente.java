@@ -1,17 +1,18 @@
-package Entities;
+package mauriziocrispino.Entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Utente {
     String nome;
     String cognome;
-    String dataDiNascita;
+    Date dataDiNascita;
     @Id
     int numeroDiTessera;
 
-    public Utente(String nome, String cognome, String dataDiNascita, int numeroDiTessera) {
+    public Utente(String nome, String cognome, Date dataDiNascita, int numeroDiTessera) {
         this.nome = nome;
         this.cognome = cognome;
         this.dataDiNascita = dataDiNascita;
@@ -34,11 +35,11 @@ public class Utente {
         this.cognome = cognome;
     }
 
-    public String getDataDiNascita() {
+    public Date getDataDiNascita() {
         return dataDiNascita;
     }
 
-    public void setDataDiNascita(String dataDiNascita) {
+    public void setDataDiNascita(Date dataDiNascita) {
         this.dataDiNascita = dataDiNascita;
     }
 

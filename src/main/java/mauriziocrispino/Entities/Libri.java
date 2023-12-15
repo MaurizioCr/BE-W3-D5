@@ -1,6 +1,7 @@
-package Entities;
+package mauriziocrispino.Entities;
 
 import javax.persistence.Entity;
+import java.util.Date;
 
 @Entity
 public class Libri extends Catalogo{
@@ -23,7 +24,7 @@ public class Libri extends Catalogo{
         this.genere = genere;
     }
 
-    public Libri(String title, String annoDiPubblicazione, int numeroPagine, String autore, String genere) {
+    public Libri(String title, Date annoDiPubblicazione, int numeroPagine, String autore, String genere) {
         super(title, annoDiPubblicazione, numeroPagine);
         this.autore = autore;
         this.genere = genere;

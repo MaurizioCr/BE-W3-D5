@@ -1,12 +1,13 @@
-package Entities;
+package mauriziocrispino.Entities;
 
 import javax.persistence.Entity;
+import java.util.Date;
 
 @Entity
 public class Riviste extends Catalogo{
 public Periodicità periodicità;
 
-    public Riviste(String title, String annoDiPubblicazione, int numeroPagine, Periodicità periodicità) {
+    public Riviste(String title, Date annoDiPubblicazione, int numeroPagine, Periodicità periodicità) {
         super(title, annoDiPubblicazione, numeroPagine);
         this.periodicità = periodicità;
     }
