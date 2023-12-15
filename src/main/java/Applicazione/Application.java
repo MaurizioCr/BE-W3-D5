@@ -11,6 +11,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static javax.xml.bind.DatatypeConverter.parseDate;
+
 public class Application {
 
     private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("Libreria");
@@ -22,31 +24,33 @@ public class Application {
             UtenteDAO ud = new UtenteDAO(em);
 
             Date dataNascita = parseDate("2004-07-02");
-            Utente utente = new Utente("Maurizio", "Crispino", dataNascita, 12345);
-            ud.save(utente);
-
+            //Utente utente = new Utente("Maurizio", "Crispino", dataNascita, 13345);
+            //ud.findByIdAndDelete(utente.getNumeroDiTessera());
+            //ud.save(utente);
 
             Date annoDiPubblicazione = parseDate("1955/06/02");
             Libri libro = new Libri("Il signore degli anelli", annoDiPubblicazione, 1000, "J.R.R. Tolkien", "Fantasy");
-            sd.save(libro);
+            //sd.findByIdAndDelete(1);
+            //sd.save(libro);
+
+            //Date annoDiPubblicazione2 = parseDate("2023/04/20");
+            //Riviste rivista = new Riviste("National Geographic", annoDiPubblicazione2, 50, Periodicità.MENSILE);
+                System.out.println(sd.findLibriById(11));
+            //sd.findByIdAndDelete(2);
+            //sd.save(rivista);
+
+            //Prestito prestitoLibro = new Prestito(utente, libro, new Date());
+
+            //Prestito prestitoRivista = new Prestito(utente, rivista, new Date());
 
 
-            Date annoDiPubblicazione2 = parseDate("2023/04/20");
-            Riviste rivista = new Riviste("National Geographic", annoDiPubblicazione2, 50, Periodicità.MENSILE);
-            sd.save(rivista);
-
-            Prestito prestitoLibro = new Prestito(utente, libro, new Date());
-
-            Prestito prestitoRivista = new Prestito(utente, rivista, new Date());
 
 
-
-
-            System.out.println("Informazioni utente: " + utente);
+            /*System.out.println("Informazioni utente: " + utente);
             System.out.println("Informazioni libro: " + libro);
             System.out.println("Informazioni rivista: " + rivista);
             System.out.println("Informazioni prestito (libro): " + prestitoLibro);
-            System.out.println("Informazioni prestito (rivista): " + prestitoRivista);
+            System.out.println("Informazioni prestito (rivista): " + prestitoRivista);*/
 
         }
 

@@ -18,6 +18,9 @@ public class Utente {
         this.dataDiNascita = dataDiNascita;
         this.numeroDiTessera = numeroDiTessera;
     }
+    public Utente(){
+
+    }
 
     public String getNome() {
         return nome;

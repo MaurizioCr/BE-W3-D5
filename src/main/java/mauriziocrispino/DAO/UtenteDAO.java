@@ -24,13 +24,13 @@ public class UtenteDAO {
         System.out.println("Persona " + utente.getNumeroDiTessera() +" "+ utente.getNome() +" "+utente.getCognome() + " aggiunto correttamente!");
     }
 
-    public Utente findById(long id) {
-        return em.find(Utente.class, id);
+    public Utente findById(int numeroDiTessera) {
+        return em.find(Utente.class, numeroDiTessera);
     }
 
 
-    public void findByIdAndDelete(long id) {
-        Utente found = this.findById(id);
+    public void findByIdAndDelete(int numeroDiTessera) {
+        Utente found = this.findById(numeroDiTessera);
 
         if (found != null) {
 
@@ -42,7 +42,7 @@ public class UtenteDAO {
 
             System.out.println("La persona " + found.getNumeroDiTessera() +" "+ found.getNome() +" "+ found.getCognome() +" eliminato correttamente!");
         } else {
-            System.out.println("La persona " + id + " non è stato trovato");
+            System.out.println("La persona " + numeroDiTessera + " non è stato trovato");
         }
 
 

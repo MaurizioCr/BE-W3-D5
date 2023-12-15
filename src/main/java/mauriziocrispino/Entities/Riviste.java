@@ -27,7 +27,7 @@ public Periodicità periodicità;
     public String toString() {
         return "Riviste{" +
                 ", ISBN=" + ISBN +
-                ", Title='" + Title + '\'' +
+                ", Title='" + titolo + '\'' +
                 ", annoDiPubblicazione='" + annoDiPubblicazione + '\'' +
                 "periodicità=" + periodicità +
                 ", numeroPagine=" + numeroPagine +

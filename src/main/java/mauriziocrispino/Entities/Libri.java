@@ -39,7 +39,7 @@ public class Libri extends Catalogo{
                 "autore='" + autore + '\'' +
                 ", genere='" + genere + '\'' +
                 ", ISBN=" + ISBN +
-                ", Title='" + Title + '\'' +
+                ", Title='" + titolo + '\'' +
                 ", annoDiPubblicazione='" + annoDiPubblicazione + '\'' +
                 ", numeroPagine=" + numeroPagine +
                 '}';
