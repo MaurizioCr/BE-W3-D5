@@ -1,4 +1,4 @@
-package mauriziocrispino.Entities.DAO;
+package mauriziocrispino.DAO;
 
 import mauriziocrispino.Entities.Utente;
 

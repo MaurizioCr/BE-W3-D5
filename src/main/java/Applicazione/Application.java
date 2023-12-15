@@ -1,28 +1,39 @@
 package Applicazione;
 
+import mauriziocrispino.DAO.CatalogoDAO;
+import mauriziocrispino.DAO.UtenteDAO;
 import mauriziocrispino.Entities.*;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-
-import static javax.xml.bind.DatatypeConverter.parseDate;
 
 public class Application {
 
+    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("Libreria");
+
         public static void main(String[] args) {
+
+            EntityManager em = emf.createEntityManager();
+            CatalogoDAO sd = new CatalogoDAO(em);
+            UtenteDAO ud = new UtenteDAO(em);
 
             Date dataNascita = parseDate("2004-07-02");
             Utente utente = new Utente("Maurizio", "Crispino", dataNascita, 12345);
+            ud.save(utente);
 
 
             Date annoDiPubblicazione = parseDate("1955/06/02");
             Libri libro = new Libri("Il signore degli anelli", annoDiPubblicazione, 1000, "J.R.R. Tolkien", "Fantasy");
+            sd.save(libro);
 
 
             Date annoDiPubblicazione2 = parseDate("2023/04/20");
             Riviste rivista = new Riviste("National Geographic", annoDiPubblicazione2, 50, Periodicità.MENSILE);
+            sd.save(rivista);
 
             Prestito prestitoLibro = new Prestito(utente, libro, new Date());
 

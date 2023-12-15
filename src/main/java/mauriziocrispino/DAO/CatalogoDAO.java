@@ -1,9 +1,8 @@
-package mauriziocrispino.Entities.DAO;
+package mauriziocrispino.DAO;
 
 import mauriziocrispino.Entities.Catalogo;
 import mauriziocrispino.Entities.Libri;
 import mauriziocrispino.Entities.Riviste;
-import mauriziocrispino.Entities.Utente;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
